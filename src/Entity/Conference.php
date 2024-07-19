@@ -72,7 +72,7 @@ class Conference
         return $this->isInternational;
     }
 
-    public function setInternational(bool $isInternational): static
+    public function setIsInternational(bool $isInternational): static
     {
         $this->isInternational = $isInternational;
 
@@ -119,5 +119,10 @@ class Conference
         $this->photoFilename = $photoFilename;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->city . ' ' . $this->year;
     }
 }

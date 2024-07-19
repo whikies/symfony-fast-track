@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ConferenceController extends AbstractController
 {
-    #[Route('/conference', name: 'homepage')]
+    #[Route('/', name: 'homepage')]
     public function index(Request $request): Response
     {
         dump($request);
