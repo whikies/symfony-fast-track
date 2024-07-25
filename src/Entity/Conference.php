@@ -30,9 +30,6 @@ class Conference
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: 'conference', orphanRemoval: true)]
     private Collection $comments;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $photoFilename = null;
-
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -105,18 +102,6 @@ class Conference
                 $comment->setConference(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getPhotoFilename(): ?string
-    {
-        return $this->photoFilename;
-    }
-
-    public function setPhotoFilename(?string $photoFilename): static
-    {
-        $this->photoFilename = $photoFilename;
 
         return $this;
     }
